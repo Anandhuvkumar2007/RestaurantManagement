@@ -50,7 +50,7 @@ public class Login implements ActionListener {
 
         if (username.equals("admin") && password.equals("1234")) {
 
-            JOptionPane.showMessageDialog(frame, "Login successful!");
+            new Home();
             frame.dispose();
 
         } else {
