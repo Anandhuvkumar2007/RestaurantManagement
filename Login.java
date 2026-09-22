@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.event.*;
 import javax.swing.*;
 
@@ -12,16 +13,18 @@ public class Login implements ActionListener {
     public Login() {
 
         frame = new JFrame("Admin Login");
-        frame.setLayout(null);
+        frame.getContentPane().setBackground(Color.YELLOW);
 
         userLabel = new JLabel("Username:");
         userLabel.setBounds(50, 50, 100, 30);
+        userLabel.setForeground(Color.RED);
 
         userField = new JTextField();
         userField.setBounds(150, 50, 150, 30);
 
         passLabel = new JLabel("Password:");
         passLabel.setBounds(50, 100, 100, 30);
+        passLabel.setForeground(Color.RED);
 
         passField = new JPasswordField();
         passField.setBounds(150, 100, 150, 30);
@@ -38,6 +41,7 @@ public class Login implements ActionListener {
         frame.add(loginButton);
 
         frame.setSize(400, 300);
+        frame.setLayout(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
     }
@@ -49,16 +53,10 @@ public class Login implements ActionListener {
         String password = new String(passField.getPassword());
 
         if (username.equals("admin") && password.equals("1234")) {
-
             new Home();
             frame.dispose();
-
         } else {
-
-            JOptionPane.showMessageDialog(
-                frame,
-                "Invalid username or password"
-            );
+            JOptionPane.showMessageDialog(frame, "Invalid username or password");
         }
     }
 
